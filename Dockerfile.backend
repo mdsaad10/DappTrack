@@ -1,0 +1,24 @@
+# DappTrack Backend - Production
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY backend/package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production
+
+# Copy backend source
+COPY backend/ .
+COPY .env .env
+
+# Expose port
+EXPOSE 3001
+
+# Set environment to production
+ENV NODE_ENV=production
+
+# Start the backend server
+CMD ["node", "server.js"]
