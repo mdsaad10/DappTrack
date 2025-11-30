@@ -54,11 +54,22 @@ Select: `api` function when prompted.
 
 This deploys the backend API as an Appwrite Cloud Function.
 
+**✅ Deployment Successful!**
+- **Function Domain**: `692bd4b700399555dd56.fra.appwrite.run`
+- **Region**: Frankfurt (eu-central)
+- **Deployed**: November 30, 2025
+- **Status**: ✅ Working (returns health check)
+
 ### Set Environment Variables
 
-Go to Appwrite Console → Functions → DappTrack API → Settings → Variables
+⚠️ **Important**: Set these variables in Appwrite Console for full functionality:
 
-Add these environment variables:
+**Steps:**
+1. Go to https://cloud.appwrite.io/console
+2. Select your **dapptrack** project (Frankfurt region)
+3. Navigate to Functions → **dapptrack-api**
+4. Click **Settings** → **Variables** tab
+5. Add these environment variables:
 
 ```env
 VITE_APP_NETWORK=testnet
@@ -70,12 +81,12 @@ PINATA_JWT=<your_pinata_jwt_token>
 
 ### Get Your Function URL
 
-After deployment, you'll get a function URL like:
+Your deployed function is available at:
 ```
-https://cloud.appwrite.io/v1/functions/{functionId}/executions
+https://692bd4b700399555dd56.fra.appwrite.run
 ```
 
-Or in Appwrite Console:
+You can also find it in Appwrite Console:
 - Go to Functions → DappTrack API
 - Copy the "Domain" URL
 

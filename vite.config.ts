@@ -6,7 +6,11 @@ export default defineConfig({
   build: {
     outDir: "dist",
     rollupOptions: {
-      external: ['buffer'],
+      output: {
+        manualChunks: {
+          'polyfills': ['buffer', 'process', 'stream-browserify', 'util'],
+        },
+      },
     },
   },
   server: {
@@ -30,5 +34,10 @@ export default defineConfig({
         global: 'globalThis',
       },
     },
+    include: ['buffer', 'process', 'stream-browserify', 'util'],
+  },
+  define: {
+    'process.env': {},
+    global: 'globalThis',
   },
 });

@@ -1,20 +1,34 @@
 {
-  "projectId": "dapptrack",
-  "projectName": "DappTrack",
-  "functions": [
-    {
-      "$id": "api",
-      "name": "DappTrack API",
-      "runtime": "node-18.0",
-      "path": "functions/api",
-      "entrypoint": "index.js",
-      "execute": ["any"],
-      "events": [],
-      "schedule": "",
-      "timeout": 15,
-      "enabled": true,
-      "logging": true,
-      "scopes": ["any"]
-    }
-  ]
+    "projectId": "dapptrack",
+    "endpoint": "https://fra.cloud.appwrite.io/v1",
+    "functions": [
+        {
+            "$id": "692bd4b7001cfe92e0e4",
+            "execute": [
+                "any"
+            ],
+            "name": "dapptrack-api",
+            "enabled": true,
+            "logging": true,
+            "runtime": "node-18.0",
+            "scopes": [
+                "users.read"
+            ],
+            "events": [],
+            "schedule": "",
+            "timeout": 15,
+            "entrypoint": "src/main.js",
+            "commands": "npm install",
+            "specification": "s-0.5vcpu-512mb",
+            "path": "functions/dapptrack-api"
+        }
+    ],
+    "buckets": [
+        {
+            "$id": "dapptrack-ui",
+            "name": "dapptrack-UI",
+            "fileSecurity": false,
+            "enabled": true
+        }
+    ]
 }
